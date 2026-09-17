@@ -1,0 +1,187 @@
+/* ja-bri.com — shared styles
+   Edit colours here and both pages update. */
+
+:root {
+  color-scheme: light dark;
+
+  --ink:        #1c1a18;
+  --ink-soft:   #55504a;
+  --page:       #faf7f2;
+  --rule:       #ddd6cb;
+  --accent:     #6a6f86;   /* muted moonlit blue-grey */
+  --accent-lit: #4a4f63;
+
+  --measure: 34rem;        /* reading width */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:        #e8e3da;
+    --ink-soft:   #a49d92;
+    --page:       #16151a;
+    --rule:       #302e36;
+    --accent:     #9aa0bb;
+    --accent-lit: #c3c8de;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-block: 4rem 5rem;
+}
+
+/* ---- masthead ---- */
+
+.masthead { margin-bottom: 3.5rem; }
+
+.byline {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.75rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 7vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ---- text ---- */
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 3rem 0 1rem;
+}
+
+p { margin: 0 0 1.25rem; }
+
+.lede { font-size: 1.125rem; }
+
+em { font-style: italic; }
+
+a {
+  color: var(--accent-lit);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--ink); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+/* ---- details block (stats, warnings) ---- */
+
+.meta {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--rule);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 2rem 0;
+}
+.meta p:last-child { margin-bottom: 0; }
+
+/* ---- call to action ---- */
+
+.cta {
+  display: inline-block;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9375rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--page);
+  background: var(--accent-lit);
+  padding: 0.7rem 1.4rem;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+.cta:hover { background: var(--ink); color: var(--page); }
+
+/* ---- chapter page ---- */
+
+.chapter-label {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+}
+
+.prose p { text-indent: 1.5em; }
+.prose p:first-of-type,
+.prose p.noindent { text-indent: 0; }
+
+.prose p:first-of-type::first-letter {
+  font-size: 3.1em;
+  line-height: 0.85;
+  float: left;
+  padding: 0.05em 0.08em 0 0;
+}
+
+.break {
+  text-align: center;
+  color: var(--ink-soft);
+  letter-spacing: 0.5em;
+  margin: 2rem 0;
+}
+
+.verse {
+  text-align: center;
+  font-style: italic;
+  margin: 2rem 0;
+  text-indent: 0;
+}
+
+.back {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  margin-top: 4rem;
+}
+
+/* ---- footer ---- */
+
+footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.links { list-style: none; padding: 0; margin: 1rem 0; }
+.links li { margin-bottom: 0.5rem; color: var(--ink-soft); }
+.links a { font-family: system-ui, sans-serif; font-size: 0.95rem; }

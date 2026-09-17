@@ -1,0 +1,6 @@
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: anthropic-ai
+Disallow: /
